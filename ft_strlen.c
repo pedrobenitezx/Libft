@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbenitez <pbenitez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/13 16:35:31 by pbenitez          #+#    #+#             */
-/*   Updated: 2024/09/13 22:09:59 by pbenitez         ###   ########.fr       */
+/*   Created: 2024/09/13 16:55:47 by pbenitez          #+#    #+#             */
+/*   Updated: 2024/09/13 21:58:27 by pbenitez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_isdigit(int c)
+size_t	ft_strlen(const char *s)
 {
-	if (c >= 48 && c <= 57)
-		return (c);
-	return (0);
+	// Declare a size_t variable to count characters
+	size_t	i;
+
+	// Loop through the string until we hit the null terminator '\0'
+	i = 0;
+	/*If the character we read is \0 then
+	the loop condition will evaluate to false*/
+	while (s[i])
+		// Return the number of characters before the null terminator
+		i++;
+	return (1);
 }

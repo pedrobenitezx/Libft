@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbenitez <pbenitez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/13 16:35:31 by pbenitez          #+#    #+#             */
-/*   Updated: 2024/09/13 22:09:59 by pbenitez         ###   ########.fr       */
+/*   Created: 2024/09/13 22:04:10 by pbenitez          #+#    #+#             */
+/*   Updated: 2024/09/16 13:17:07 by pbenitez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_isdigit(int c)
+void	ft_bzero(void *s, size_t n)
 {
-	if (c >= 48 && c <= 57)
-		return (c);
-	return (0);
+	//declaring temporal pointer
+	char	*ptr;
+
+	//temporal pointer equal to b converted to char *
+	ptr = (char *) s;
+	//loop in temporal pointer while we didn't reach n
+	while (n > 0)
+	{
+		//0 to the current byte in temporal pointer
+		*(ptr++) = 0;
+		//reducing n by one to set only n bytes to 0
+		n--;
+	}
 }
