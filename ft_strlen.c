@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbenitez <pbenitez@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: pbenitez <pbenitez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/13 16:55:47 by pbenitez          #+#    #+#             */
-/*   Updated: 2024/09/13 21:58:27 by pbenitez         ###   ########.fr       */
+/*   Created: 2024/09/11 15:53:10 by pbenitez          #+#    #+#             */
+/*   Updated: 2024/09/16 14:40:21 by pbenitez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	// Declare a size_t variable to count characters
 	size_t	i;
 
-	// Loop through the string until we hit the null terminator '\0'
 	i = 0;
-	/*If the character we read is \0 then
-	the loop condition will evaluate to false*/
-	while (s[i])
-		// Return the number of characters before the null terminator
+	while (s[i] != '\0')
 		i++;
-	return (1);
+	return (i);
 }

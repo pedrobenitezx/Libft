@@ -3,31 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbenitez <pbenitez@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: pbenitez <pbenitez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 16:59:04 by pbenitez          #+#    #+#             */
-/*   Updated: 2024/09/13 21:58:29 by pbenitez         ###   ########.fr       */
+/*   Updated: 2024/09/16 19:03:38 by pbenitez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *s, int c, size_t len)
 {
-	/*declaring temporary pointer*/
 	unsigned char	*ptr;
 
-	/*temporary pointer equal to b converted to unsigned char*/
-	ptr = (unsigned char *) b;
-	/*loop temp pointer while dindn't reach len*/
+	ptr = (unsigned char *) s;
 	while (len > 0)
 	{
-		/*assing unsigned char value of c to the current byte
-		in our temporal pointer*/
-		*(ptr++) = (unsigned char) c;
-		/*reducing the len by one we only set len bytes*/
+		*(ptr++) = (unsigned char)c;
 		len--;
 	}
-	/*return the function first parameter, void *b */
-	return (0);
+	return (s);
 }
