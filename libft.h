@@ -6,7 +6,7 @@
 /*   By: pbenitez <pbenitez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 16:46:27 by pbenitez          #+#    #+#             */
-/*   Updated: 2024/09/16 19:20:13 by pbenitez         ###   ########.fr       */
+/*   Updated: 2024/09/16 19:23:11 by pbenitez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 //libraries
-// test
 # include <ctype.h>
 # include <string.h>
 # include <stdlib.h>
