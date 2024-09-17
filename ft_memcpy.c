@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbenitez <pbenitez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pbenitez <pbenitez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 22:09:09 by pbenitez          #+#    #+#             */
-/*   Updated: 2024/09/16 15:14:01 by pbenitez         ###   ########.fr       */
+/*   Updated: 2024/09/17 00:04:11 by pbenitez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*temp_dst;
 	unsigned char	*temp_src;
 
+	if (dst == (void *)0 && src == (void *)0)
+		return (dst);
 	temp_dst = (unsigned char *) dst;
 	temp_src = (unsigned char *) src;
 	while (n > 0)
@@ -24,4 +26,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		*(temp_dst++) = *(temp_src++);
 		n--;
 	}
+	return (dst);
 }
