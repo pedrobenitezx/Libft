@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbenitez <pbenitez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 10:47:31 by pbenitez          #+#    #+#             */
-/*   Updated: 2024/09/20 15:54:56 by pbenitez         ###   ########.fr       */
+/*   Created: 2024/09/20 15:57:17 by pbenitez          #+#    #+#             */
+/*   Updated: 2024/09/20 16:11:04 by pbenitez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t n)
+size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char	*tmp_dst;
-	char	*tmp_src;
-	size_t	i;
+	size_t src_len;
+	size_t dst_len;
 
-	if (!dst && !src)
-		return (NULL);
-	tmp_dst = (char *) dst;
-	tmp_src = (char *) src;
-	i = 0;
-	if (tmp_dst > tmp_src)
-		while (n-- > 0)
-			tmp_dst[n] = tmp_src[n];
+	src_len = ft_strlen(src);
+	dst_len = ft_strlen(dst);
+	if (dst_len >= dstsize)
+		dst_len = dstsize;
+	if (dst_len == dstsize)
+		return (dstsize + src_len);
+	if (src_len < dstsize - dst_len)
+		ft_memcpy(dst + dst_len, src, src_len + 1);
 	else
 	{
-		while (i < n)
-		{
-			tmp_dst[i] = tmp_src[i];
-			i++;
-		}
+		ft_memcpy(dst + dst_len, src, dstsize - dst_len - 1);
+		dst[dstsize - 1] = '\0';
 	}
-	return (dst);
+	return (dst_len + src_len);
 }
