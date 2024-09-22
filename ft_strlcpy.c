@@ -6,7 +6,7 @@
 /*   By: pbenitez <pbenitez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:51:37 by pbenitez          #+#    #+#             */
-/*   Updated: 2024/09/20 16:15:33 by pbenitez         ###   ########.fr       */
+/*   Updated: 2024/09/21 17:56:37 by pbenitez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,17 @@
 
 size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
 {
-	size_t	src_len;
+	size_t i;
 
-	src_len = ft_strlen(src);
-	if (src_len + 1 < dstsize)
-		ft_memcpy(dst, src, src_len + 1);
-	else if (dstsize != 0)
+	i = 0;
+	if (dstsize != 0)
 	{
-		ft_memcpy(dst, src, dstsize - 1);
-		dst[dstsize - 1] = '\0';
+		while (src[i] != '\0' && i < dstsize - 1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	return (src_len);
+	return (ft_strlen(src));
 }
