@@ -6,13 +6,13 @@
 /*   By: pbenitez <pbenitez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 16:29:28 by pbenitez          #+#    #+#             */
-/*   Updated: 2024/09/20 15:41:51 by pbenitez         ###   ########.fr       */
+/*   Updated: 2024/09/30 15:24:54 by pbenitez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 		return (c);

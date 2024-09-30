@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbenitez <pbenitez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 18:41:16 by pbenitez          #+#    #+#             */
-/*   Updated: 2024/09/29 13:44:43 by pbenitez         ###   ########.fr       */
+/*   Created: 2024/09/29 13:45:27 by pbenitez          #+#    #+#             */
+/*   Updated: 2024/09/29 13:53:56 by pbenitez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+static int	ft_is_in_set(char c, const char *set)
 {
-	char	*res;
-	int		i;
-	int		j;
+	while (*set)
+	{
+		if (c == *set)
+			return (1);
+		set++;
+	}
+	return (0);
+}
 
-	if (!s1 || !s2)
+char	*ft_strtrim(const char *s1, const char *set)
+{
+	size_t	start;
+	size_t	end;
+
+	if (!s1 || !set)
 		return (NULL);
-	i = 0;
-	j = 0;
-	res = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!res)
-		return (NULL);
-	while (s1[i])
-		res[j++] = s1[i++];
-	i = 0;
-	while (s2[i])
-		res[j++] = s2[i++];
-	res[j] = '\0';
-	return (res);
+	start = 0;
+	while (s1[start] && ft_is_in_set(s1[start], set))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_is_in_set(s1[end - 1], set))
+		end--;
+	return (ft_substr(s1, start, end - start));
 }
