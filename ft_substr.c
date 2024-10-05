@@ -6,7 +6,7 @@
 /*   By: pbenitez <pbenitez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 18:39:04 by pbenitez          #+#    #+#             */
-/*   Updated: 2024/09/29 14:03:29 by pbenitez         ###   ########.fr       */
+/*   Updated: 2024/10/05 15:32:38 by pbenitez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ char	*ft_substr(char const *s, size_t start, size_t len)
 	if (!s)
 		return (NULL);
 	s_len = ft_strlen(s);
-
 	if (start >= s_len)
 		return (ft_calloc(1, 1));
 	if (len > s_len - start)

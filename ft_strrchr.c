@@ -6,15 +6,15 @@
 /*   By: pbenitez <pbenitez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 16:23:00 by pbenitez          #+#    #+#             */
-/*   Updated: 2024/09/22 15:34:55 by pbenitez         ###   ########.fr       */
+/*   Updated: 2024/10/05 15:42:56 by pbenitez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = ft_strlen(s);
 	if (c == 0)

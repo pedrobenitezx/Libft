@@ -6,15 +6,15 @@
 /*   By: pbenitez <pbenitez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:51:37 by pbenitez          #+#    #+#             */
-/*   Updated: 2024/09/21 17:56:37 by pbenitez         ###   ########.fr       */
+/*   Updated: 2024/10/05 15:44:20 by pbenitez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (dstsize != 0)
