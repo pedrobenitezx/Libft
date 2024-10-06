@@ -15,24 +15,16 @@
 static size_t	ft_wordcount(const char *s, char c)
 {
 	size_t	i;
-	size_t	count;
-	int		in_word;
+	size_t	x;
 
 	i = 0;
-	count = 0;
-	in_word = 0;
-	while (s[i])
+	x = 0;
+	while (s[i] != '\0')
 	{
-		if (s[i] != c && !in_word)
-		{
-			in_word = 1;
-			count++;
-		}
-		else if (s[i] == c)
-			in_word = 0;
-		i++;
+		if (s[i++] != c && (s[i] == c || s[i] == '\0'))
+			x++;
 	}
-	return (count);
+	return (x);
 }
 
 static void	ft_free_all(char **strs, size_t n)
@@ -51,16 +43,12 @@ static void	ft_free_all(char **strs, size_t n)
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
-	size_t	i;
-	size_t	len;
-	size_t	n;
+	size_t	len = 0;
+	size_t	n = 0;
 
-	if (!s)
+	if (!s || !(strs = (char **)malloc(sizeof(char *) * (ft_wordcount(s, c) + 1))))
 		return (NULL);
-	strs = (char **)malloc(sizeof(char *) * (ft_wordcount(s, c) + 1));
-	if (!strs)
-		return (NULL);
-	n = 0;
+
 	while (*s)
 	{
 		if (*s != c)
