@@ -6,7 +6,7 @@
 /*   By: pbenitez <pbenitez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:54:23 by pbenitez          #+#    #+#             */
-/*   Updated: 2024/09/29 14:00:34 by pbenitez         ###   ########.fr       */
+/*   Updated: 2024/10/08 16:16:31 by pbenitez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,13 @@ static void	ft_free_all(char **strs, size_t n)
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
-	size_t	len = 0;
-	size_t	n = 0;
+	size_t	len;
+	size_t	n;
 
+	len = 0;
+	n = 0;
 	if (!s || !(strs = (char **)malloc(sizeof(char *) * (ft_wordcount(s, c) + 1))))
 		return (NULL);
-
 	while (*s)
 	{
 		if (*s != c)
