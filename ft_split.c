@@ -61,7 +61,7 @@ char **ft_split(const char *s, char c)
     int word_index;
 
     if (!s || !(words_array = malloc(sizeof(char *) * 
-		(word_count(s, c) + 1))))
+        (word_count(s, c) + 1))))
         return (NULL);
     word_index = 0;
     while (*s)
@@ -71,11 +71,11 @@ char **ft_split(const char *s, char c)
         if (*s)
         {
             words_array[word_index] = ft_substr(s, 0,
-					word_length(s, c));
+                word_length(s, c));
             if (!words_array[word_index])
                 return (free_memory(words_array));
             word_index++;
-            s += gword_length(s, c);
+            s += word_length(s, c);
         }
     }
     words_array[word_index] = NULL;
