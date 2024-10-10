@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	get_word_count(const char *s, char c)
+int	word_count(const char *s, char c)
 {
 	int	i;
 	int	count_word;
@@ -31,7 +31,7 @@ int	get_word_count(const char *s, char c)
 	return (count_word);
 }
 
-int	get_word_length(const char *s, char c)
+int	gword_length(const char *s, char c)
 {
 	int	len;
 
@@ -41,7 +41,7 @@ int	get_word_length(const char *s, char c)
 	return (len);
 }
 
-char	**free_allocated_memory(char **new_str)
+char	**free_memory(char **new_str)
 {
 	int	i;
 
@@ -71,11 +71,11 @@ char	**ft_split(const char *s, char c)
 		if (*s)
 		{
 			words_array[word_index] = ft_substr(s, 0, 
-				get_word_length(s, c));
+				word_length(s, c));
 			if (!words_array[word_index])
-				return (free_allocated_memory(words_array));
+				return (free_memory(words_array));
 			word_index++;
-			s += get_word_length(s, c);
+			s += word_length(s, c);
 		}
 	}
 	words_array[word_index] = NULL;
