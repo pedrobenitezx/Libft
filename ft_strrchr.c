@@ -6,7 +6,7 @@
 /*   By: pbenitez <pbenitez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 16:23:00 by pbenitez          #+#    #+#             */
-/*   Updated: 2024/10/05 15:42:56 by pbenitez         ###   ########.fr       */
+/*   Updated: 2024/10/14 16:07:16 by pbenitez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ char	*ft_strrchr(const char *s, int c)
 
 	i = ft_strlen(s);
 	if (c == 0)
-		return ((char *)&s[i]);
+		return ((char *)s + i);
 	while (i >= 0)
 	{
 		if (s[i] == (char)c)
-			return ((char *)&s[i]);
+			return ((char *)s + i);
 		i--;
 	}
 	return (0);
