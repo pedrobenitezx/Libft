@@ -6,7 +6,7 @@
 /*   By: pbenitez <pbenitez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 13:54:23 by pbenitez          #+#    #+#             */
-/*   Updated: 2024/10/12 21:47:13 by pbenitez         ###   ########.fr       */
+/*   Updated: 2024/10/14 22:38:49 by pbenitez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,10 @@ char	**ft_split(const char *s, char c)
 	char	**words_array;
 	int		word_index;
 
-	if (!s || !(words_array = malloc(sizeof(char *)
-				* (word_count(s, c) + 1))))
+	if (!s)
+		return (NULL);
+	words_array = malloc(sizeof(char *) * (word_count(s, c) + 1));
+	if (!words_array)
 		return (NULL);
 	word_index = 0;
 	while (*s)
@@ -70,8 +72,7 @@ char	**ft_split(const char *s, char c)
 			s++;
 		if (*s)
 		{
-			words_array[word_index] = ft_substr(s, 0,
-					word_length(s, c));
+			words_array[word_index] = ft_substr(s, 0, word_length(s, c));
 			if (!words_array[word_index])
 				return (free_memory(words_array));
 			word_index++;
